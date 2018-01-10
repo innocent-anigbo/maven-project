@@ -37,9 +37,11 @@ stages{
 
                 stage ("Deploy to Production"){
                     steps {
+                       sshagent (credentials: ['oke-key']) {
                         sh "scp -o StrictHostKeyChecking=no -i /var/jenkins_home/.ssh_keys/inno-oke-key.pem **/target/*.war ec2-user@${params.tomcat_prod}:/home/ec2-user/apache-tomcat-7.0.82/webapps"
                     }
-                }
+                 }
+               }
             }
         }
     }
