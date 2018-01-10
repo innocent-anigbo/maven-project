@@ -26,7 +26,7 @@ stages{
         stage ('Deployments'){
             parallel{
                 stage ('Deploy to Staging'){
-                   step {
+                   steps {
                       sshagent (credentials: ['ec2-user']) {
                         sh "scp -o StrictHostKeyChecking=no -i **/target/*.war ec2-user@${params.tomcat_dev}:/home/ec2-user/apache-tomcat7-stage/webapps"
                     }
