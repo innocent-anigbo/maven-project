@@ -2,10 +2,9 @@ pipeline {
     agent {
       label 'tomcat-user'
      }
-    tools {
-        jdk '$JAVA_HOME' 
+     environment { 
+        JAVA_HOME = '/home/ec2-user/jdk1.8.0_151'
     }
-
     parameters {
          string(name: 'tomcat_dev', defaultValue: 'koko-01.mykezy.com', description: 'Staging Server')
          string(name: 'tomcat_prod', defaultValue: 'koko-01.mykezy.com', description: 'Production Server')
