@@ -3,7 +3,7 @@ pipeline {
       label 'tomcat-user'
      }
     tools {
-        jdk 'localJava' 
+        jdk '$JAVA_HOME' 
     }
 
     parameters {
