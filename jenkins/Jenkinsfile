@@ -3,7 +3,7 @@ pipeline {
       label 'tomcat-user'
      }
     tools {
-        maven '/home/ec2-user/jdk1.8.0_151' 
+        jdk '/home/ec2-user/jdk1.8.0_151' 
     }
 
     parameters {
